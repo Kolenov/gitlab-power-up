@@ -1,0 +1,43 @@
+{
+  "name": "gitlab-power-up",
+  "version": "1.0.0",
+  "repository": "git@github.com:Kolenov/gitlab-power-up.git",
+  "author": "Eduard Kolenov <kolenov.ed@gmail.com>",
+  "license": "MIT",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "prestart": "yarn run clean",
+    "start": "parcel",
+    "clean": "rimraf ./docs",
+    "build": "NODE_ENV=production yarn prestart && yarn parcel build 'src/html/*.html' --no-source-maps --no-cache",
+    "lint": "eslint src --fix"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.16.5",
+    "eslint": "^8.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "parcel": "^2.2.1",
+    "parcel-plugin-static-files-copy": "^2.6.0",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.2"
+  },
+  "prettier": {
+    "printWidth": 120,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "targets": {
+    "default": {
+      "publicUrl": "https://kolenov.github.io/gitlab-power-up/",
+      "distDir": "./docs"
+    }
+  },
+  "staticFiles": {
+    "staticPath": [
+      "src/images"
+    ]
+  }
+}
