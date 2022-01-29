@@ -1,0 +1,77 @@
+.inline-label {
+  display: inline-block;
+  font-weight: normal;
+}
+
+.mr-link:before {
+  display: block;
+  content: ' ';
+  background-image: url('../images/mr_icon.svg');
+  background-size: 17px 23px;
+  height: 23px;
+  width: 17px;
+  position: absolute;
+  left: 8px;
+}
+
+.mr-link {
+  display: block;
+  color: #4d4d4d;
+  padding-bottom: 10px;
+  padding-left: 33px;
+}
+
+.save-btn.saving:before {
+  display: block;
+  content: ' ';
+  background-image: url(../images/spinner.svg);
+  background-size: 17px 17px;
+  height: 17px;
+  width: 17px;
+  position: absolute;
+  left: 10px;
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear;
+}
+
+.save-btn.saving {
+  padding-left: 35px;
+}
+
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+
+/* Use type="text" to override default behavior */
+.invalid.input-group input[type="text"] {
+  border-color: #EB5A46;
+  margin-bottom: 0;
+}
+
+.invalid-note {
+  display: none;
+  color: #EB5A46;
+  margin-bottom: 16px;
+}
+
+.invalid .invalid-note {
+  display: block;
+}
